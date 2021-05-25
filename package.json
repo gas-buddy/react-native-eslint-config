@@ -1,6 +1,6 @@
 {
   "name": "@gasbuddy/eslint-config-react-native",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "GasBuddy eslint config, based on react-native-community but with new parser modules",
   "main": "index.js",
   "scripts": {

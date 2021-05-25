@@ -22,7 +22,6 @@
 
   extends: [
     'plugin:prettier/recommended', // https://github.com/prettier/eslint-plugin-prettier#recommended-configuration
-    'prettier/react',
   ],
 
   plugins: [
@@ -32,6 +31,7 @@
     'react-native',
     '@react-native-community',
     'jest',
+    '@typescript-eslint',
   ],
 
   settings: {
@@ -52,7 +52,10 @@
       rules: {
         '@typescript-eslint/no-unused-vars': [
           'error',
-          {argsIgnorePattern: '^_'},
+          {
+            argsIgnorePattern: '^_',
+            ignoreRestSiblings: true,
+          },
         ],
         'no-unused-vars': 'off',
       },
@@ -115,6 +118,7 @@
     WebSocket: true,
     window: false,
     XMLHttpRequest: false,
+    JSX: true,
   },
 
   rules: {
@@ -202,7 +206,8 @@
     'no-catch-shadow': 1, // disallow the catch clause parameter name being the same as a variable in the outer scope (off by default in the node environment)
     'no-delete-var': 1, // disallow deletion of variables
     'no-label-var': 1, // disallow labels that share a name with a variable
-    'no-shadow': 1, // disallow declaration of variables already declared in the outer scope
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': 'error',
     'no-shadow-restricted-names': 1, // disallow shadowing of names such as arguments
     'no-undef': 2, // disallow use of undeclared variables unless mentioned in a /*global */ block
     'no-undefined': 0, // disallow use of undefined variable (off by default)
