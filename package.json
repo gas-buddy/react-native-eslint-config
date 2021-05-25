@@ -1,5 +1,5 @@
 {
-  "name": "@gasbuddy/react-native-eslint-config",
+  "name": "@gasbuddy/eslint-config-react-native",
   "version": "1.0.0",
   "description": "GasBuddy eslint config, based on react-native-community but with new parser modules",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/gas-buddy/react-native-eslint-config.git"
+    "url": "git+ssh://git@github.com/gas-buddy/eslint-config-react-native.git"
   },
   "keywords": [
     "codestyle"
