@@ -199,6 +199,8 @@
     'vars-on-top': 0, // requires to declare all vars on top of their containing scope (off by default)
     'wrap-iife': 0, // require immediate function invocation to be wrapped in parentheses (off by default)
     yoda: 1, // require or disallow Yoda conditions
+    'object-shorthand': 1, // require property shorthand syntax for object literals
+    'no-useless-rename': 1, // disallow renaming import, export, and destructured assignments to the same name
 
     // Variables
     // These rules have to do with variable declarations.
@@ -314,6 +316,7 @@
     // The following rules are made available via `eslint-plugin-react-native`
 
     'react-native/no-inline-styles': 1,
+    'react-native/no-single-element-style-arrays': 1, // This is to prevent unnecessary re-renders when using style arrays.
 
     // Jest Plugin
     // The following rules are made available via `eslint-plugin-jest`.
