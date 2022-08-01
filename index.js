@@ -32,11 +32,20 @@
     '@react-native-community',
     'jest',
     '@typescript-eslint',
+    'import',
   ],
 
   settings: {
     react: {
       version: 'detect',
+    },
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.tsx'],
+    },
+    'import/resolver': {
+      typescript: {
+        alwaysTryTypes: true,
+      },
     },
   },
 
@@ -62,6 +71,14 @@
     },
     {
       files: [
+        '*.stories.{js,ts,tsx}',
+      ],
+      rules: {
+        'import/no-extraneous-dependencies': 0,
+      },
+    },
+    {
+      files: [
         '*.{spec,test}.{js,ts,tsx}',
         '**/__{mocks,tests}__/**/*.{js,ts,tsx}',
       ],
@@ -71,6 +88,7 @@
       },
       rules: {
         'react-native/no-inline-styles': 0,
+        'import/no-extraneous-dependencies': 0,
         quotes: [1, 'single', {avoidEscape: true, allowTemplateLiterals: true}],
       },
     },
@@ -324,5 +342,12 @@
     'jest/no-focused-tests': 1,
     'jest/no-identical-title': 1,
     'jest/valid-expect': 1,
+
+    // Import hygiene
+    'import/no-unresolved': 'error',
+    'import/no-extraneous-dependencies': [
+      'error',
+      { devDependencies: true }, // otherwise we get @types/foo errors all over the place - couldn't seem to fix this
+    ],
   },
 };
