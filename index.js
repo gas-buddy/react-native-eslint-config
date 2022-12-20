@@ -232,7 +232,12 @@
       1,
       {vars: 'all', args: 'none', ignoreRestSiblings: true},
     ], // disallow declaration of variables that are not used in the code
-    'no-use-before-define': 0, // disallow use of variables before they are defined
+    // The default eslint rule must be turned off because it gives false positives with TypeScript
+    'no-use-before-define': 'off',
+    '@typescript-eslint/no-use-before-define': [
+      'error',
+      { functions: false, typedefs: false, enums: false },
+    ], // disallow use of variables before they are defined
 
     // Node.js
     // These rules are specific to JavaScript running on Node.js.
